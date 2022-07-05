@@ -1,7 +1,8 @@
 # reference
 
-Site: https://codingcat.dev/tutorial/integrating-storybook-with-sveltekit#steps
-Youtube: https://www.youtube.com/watch?v=Kc1ULlfyUcw
+Site: https://codingcat.dev/tutorial/integrating-storybook-with-sveltekit#steps  
+Youtube: https://www.youtube.com/watch?v=Kc1ULlfyUcw  
+
 
 # history
 
@@ -17,10 +18,14 @@ npm i -D @storybook/addon-postcss
 ```
 
 # package version
-storybook ^6.5.9
-svelte ^3.48.0
-tailwindcss ^3.1.4
-postcss ^8.4.14
+storybook ^6.5.9  
+svelte ^3.48.0  
+tailwindcss ^3.1.4  
+postcss ^8.4.14  
+node v18.4.0  
+npm 8.13.2  
+windows10  
+vscode 1.68.1  
 
 # create-svelte
 

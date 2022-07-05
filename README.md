@@ -1,3 +1,27 @@
+# reference
+
+Site: https://codingcat.dev/tutorial/integrating-storybook-with-sveltekit#steps
+Youtube: https://www.youtube.com/watch?v=Kc1ULlfyUcw
+
+# history
+
+```sh
+npm init svelte@next storybook-sveltekit
+cd storybook-sveltekit/
+npm install
+npm run dev
+npx sb@next init
+npm run storybook
+npx svelte-add@latest tailwindcss
+npm i -D @storybook/addon-postcss
+```
+
+# package version
+storybook ^6.5.9
+svelte ^3.48.0
+tailwindcss ^3.1.4
+postcss ^8.4.14
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).

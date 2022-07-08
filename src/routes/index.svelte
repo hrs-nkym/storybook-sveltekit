@@ -135,33 +135,10 @@
   p {
     margin-top: 0;
   }
-  label {
-    font-size: 0.8rem;
-  }
   .mb-4 {
     margin-bottom: 2rem;
   }
-  .count-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 0.0625rem solid var(--light);
-    border-bottom: 0.0625rem solid var(--light);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-  }
   .pager-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 0.0625rem solid var(--light);
-    border-bottom: 0.0625rem solid var(--light);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-  }
-  .controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -183,16 +160,6 @@
   }
   .pagination button {
     border-radius: 0;
-  }
-  input {
-    vertical-align: middle;
-    outline: none;
-    border: 0.0625rem solid var(--light);
-    border-radius: 0.125rem;
-    padding: 0.25rem 0.5rem;
-  }
-  input:focus {
-    border: 0.0625rem solid var(--light-dark);
   }
   button {
     vertical-align: middle;

@@ -1,5 +1,6 @@
 <script>
   // import Page from "$components/Page/Page.svelte";
+  import Total from "$components/Control/Total.svelte";
   // import Button from "$components/Button/Button.svelte";
   // 1
   import { onMount } from "svelte";
@@ -58,29 +59,10 @@
       <p>Loading...</p>
     {:else}
       <div>
-        <!-- <h1>Strapi Articles ({stateMeta.pagination.total})</h1> -->
-        <h1>Svlete TailWindCss Table</h1>
+        <h1>Svletekit tailwindcss table</h1>
 
-        <div class="controls">
-          <div>
-            <label for="inputPageSize">Page Size</label>
-            <!-- 1 -->
-            <input
-              name="inputPageSize"
-              type="number"
-              bind:value={stateCurrentPageSize}
-              min="1"
-              max={stateMeta.pagination.total}
-            />
-            <!-- 2 -->
-            <button
-              on:click|preventDefault={() =>
-                updateArticlesByPage(stateCurrentPageNumber)}
-              disabled={stateMeta.pagination.total <= stateCurrentPageSize}
-              >Apply</button
-            >
-          </div>
-        </div>
+        <Total cnt={stateMeta.pagination.total} />
+
         <div class="mb-4">
           <!-- 7 -->
           {#each stateArticles as article}
@@ -91,7 +73,7 @@
           {/each}
         </div>
 
-        <div class="controls">
+        <div class="pager-controls">
           <!-- 3 -->
           <button
             on:click|preventDefault={() =>
@@ -157,6 +139,26 @@
     font-size: 0.8rem;
   }
   .mb-4 {
+    margin-bottom: 2rem;
+  }
+  .count-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.0625rem solid var(--light);
+    border-bottom: 0.0625rem solid var(--light);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  .pager-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.0625rem solid var(--light);
+    border-bottom: 0.0625rem solid var(--light);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     margin-bottom: 2rem;
   }
   .controls {

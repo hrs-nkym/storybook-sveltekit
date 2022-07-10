@@ -1,5 +1,5 @@
 <script>
-  import "./total.css";
+  import "./article.css";
   import { createEventDispatcher } from "svelte";
   /**
    * Is this the principal call to action on the page?
@@ -10,14 +10,10 @@
    * What background color to use
    */
   export let backgroundColor;
-  /**
-   * How large should the total be?
-   */
-  export let size = "medium";
 
   let mode = primary
-    ? "storybook-total--primary"
-    : "storybook-total--secondary";
+    ? "storybook-article--primary"
+    : "storybook-article--secondary";
 
   let style = backgroundColor ? `background-color: ${backgroundColor}` : "";
 
@@ -30,14 +26,10 @@
     dispatch("click", event);
   }
 
-  export let cnt = "";
-  export let currentpage = "";
-  export let maxpage = "";
+  export let article = "";
 </script>
 
-<div
-  class={["count-controls", `storybook-total--${size}`, mode].join(" ")}
-  {style}
->
-  Total Count: ({cnt}) , Current Page: ({currentpage}) / Max Page: ({maxpage})
+<div class="mb-4">
+  <h2 class="h4">{article.id} - {article.attributes.title}</h2>
+  <p class="mb-1">{article.attributes.description}</p>
 </div>

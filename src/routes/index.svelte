@@ -1,7 +1,7 @@
 <script>
-  // import Page from "$components/Page/Page.svelte";
   import Total from "$components/Control/Total.svelte";
-  // import Button from "$components/Button/Button.svelte";
+  import Article from "$components/Article/Article.svelte";
+
   // 1
   import { onMount } from "svelte";
   import axios from "axios";
@@ -61,15 +61,16 @@
       <div>
         <h1>Svletekit tailwindcss table</h1>
 
-        <Total cnt={stateMeta.pagination.total} />
+        <Total
+          cnt={stateMeta.pagination.total}
+          currentpage={stateCurrentPageNumber}
+          maxpage={stateCurrentPageSize}
+        />
 
         <div class="mb-4">
           <!-- 7 -->
           {#each stateArticles as article}
-            <div class="mb-4">
-              <h2 class="h4">{article.id} - {article.attributes.title}</h2>
-              <p class="mb-1">{article.attributes.description}</p>
-            </div>
+            <Article {article} />
           {/each}
         </div>
 
@@ -78,7 +79,9 @@
           <button
             on:click|preventDefault={() =>
               updateArticlesByPage(--stateCurrentPageNumber)}
-            disabled={stateMeta.pagination.page === 1}>Previous</button
+            disabled={stateMeta.pagination.page === 1}
+          >
+            ❮ Previous</button
           >
           <!-- 4 -->
           <div class="pagination">
@@ -94,7 +97,7 @@
             on:click|preventDefault={() =>
               updateArticlesByPage(++stateCurrentPageNumber)}
             disabled={stateMeta.pagination.page ===
-              stateMeta.pagination.pageCount}>Next</button
+              stateMeta.pagination.pageCount}>Next ❯</button
           >
         </div>
       </div>
@@ -126,11 +129,6 @@
     font-size: 2rem;
     margin-top: 0;
     margin-bottom: 1.25rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
   }
   p {
     margin-top: 0;
